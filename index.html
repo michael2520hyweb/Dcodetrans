@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>低調碼轉換</title>
+  <meta charset="utf-8">
+  <meta name="author" content="陳毅">
+  <meta http-equiv="Content-Language" content="zh-TW">
+  <meta http-equiv="Pragma" content="no-cache">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.7/semantic.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.7/semantic.min.js"></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+  <style type="text/css">
+  #logo{
+    width: 220px;
+    height: 110px;
+    position: absolute;
+    }
+  </style>
+</head>
+<body background="back.jpg" style="margin: 0px;
+text-align:center;
+background-size: cover;
+width: 100%;
+">
+<div class="row justify-content-md-center">
+<img id="logo" onclick="alert('支持goo.gl,0rz,台泥,t.cn...');" src="logo_trans.png">
+</div>
+<div id="app" style="
+width: 50%;
+position: absolute;
+left: 25%;
+top: 150px;
+">
+<form class="form-group">
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="inputPassword2" class="sr-only">CODE</label>
+    <input type="password" class="form-control" id="inputPassword2" v-model="msg" placeholder="請在此輸入低調碼">
+  </div>
+  <br>
+  <!-- <button type="submit" class="btn btn-primary mb-2">Confirm identity</button> -->
+<a  v-if="msg.length > 4" class="btn btn-primary mb-2" id="a" href="#" v-on:click="trans()" >
+<p v-if="msg.length == 5">http://0rz.tw/</p><p v-if="msg.length == 6">https://goo.gl/</p><p v-if="msg.length == 7">http://t.cn/</p><p v-if="msg.length == 8">https://tinyurl.com/</p>{{msg}}</a>
+</form>
+<h2>Developer</h2>
+<br>
+<br>
+<a class="ui blue image label">
+  <img src="https://semantic-ui.com/images/avatar/small/veronika.jpg">
+  IAN
+  <div class="detail">Student</div>
+</a>
+<a class="ui teal image label">
+  <img src="https://semantic-ui.com/images/avatar/small/jenny.jpg">
+  EC god
+  <div class="detail">Student</div>
+</a>
+
+</div>
+<script>
+
+new Vue({
+  el: '#app',
+  data () {
+    return {
+      msg: ''
+    }
+  },
+  methods: {
+    trans: function (event) {
+      a.href = a.text;
+    }
+  }
+})
+</script>
+</body>
+</html>
+
+
